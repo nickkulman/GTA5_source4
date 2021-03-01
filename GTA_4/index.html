@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame 4</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="main">
+            <div class="main__child">
+
+            
+        
+                <div class="content">
+                    <div class="header__top">
+                        <button>ГОНКА</button>
+                    </div>
+                    <div class="header__descr">
+                        КРУГОВОЕ ДВИЖЕНИЕ
+                    </div>
+
+                    <div class="header">
+                        
+                        
+                      
+                        
+                            <div class="table__title">
+                                <div class="table__title_square"></div>
+                                
+                                <div class="table__title_square"></div>
+                                <div class="table__title_content">
+                                    <div class="table__title_item" >ИГРОК</div>
+                                    <div class="table__title_item">ТРАНСПОРТ</div>
+                                    <div class="table__title_item">ОБЩЕЕ ВРЕМЯ</div>
+                                    <div class="table__title_item">ОПЫТ</div>
+                                </div>
+                            
+                            </div> 
+                    </div>
+                    <div class="list" style="margin-top: 4px; height: 412px; overflow-y: scroll; padding-right: 11px;">
+                        <div class="list__item" v-for="item in listItems">
+                            <div class="list__left">
+                                <div class="list__icon">
+                                    <div>{{ item.id }}</div>
+                                </div>
+                                <div class="list__text">
+                                    {{ item.name }}
+                                </div>
+                                
+                            </div>
+                            <div class="list__trans_group" >
+                                <div class="list__badge" :style="{ background: item.statusColor }" >
+                                </div>
+                                <div class="list__trans">
+                                    {{ item.trans }}
+                                </div>
+                                
+                            </div>
+                            <div class="list__timer_group">
+                                <div class="list__timer">
+                                    {{ item.timer }}
+                                </div>
+                            </div>
+                            <div class="list__exp_group">
+                                <div class="list__exp">
+                                    {{ item.exp }}
+                                </div>
+                            </div>
+                            <div class="list__right">
+                                <!-- <div class="list__badge" :style="{ background: item.statusColor }" style="margin-right: 15px;">
+                                    {{ item.status }}
+                                </div> -->
+                                <div class="list__close">
+                                    <img src="img/plus_svg.svg" alt="" srcset="">
+
+                                </div>
+                                <div class="list__close selected">
+                                   &times;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="buttons">
+                            <div class="default-button" style="margin-right: 15px;">покинуть игру</div>
+                            <div class="default-button">повторить игру</div>
+                        </div>
+                        <div class="online">
+                            <img src="./online.svg" alt="" srcset="">
+                            <div class="online__text">14/26</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="left-arrow">
+            <img src="./left_arrow.svg" alt="">
+        </div> -->
+        <div class="shadow1"></div>
+        <div class="shadow2"></div>
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: '.main',
+            data: {
+                listItems: [
+                    { id: 16, name: 'aeriaal_dsg', trans: 'Ellegy TURBO', timer: '01,12,05,678', exp: '+ 10000', statusColor: '#BA4100;'},
+                    { id: 1, name: 'AnTi_Manti', trans: 'Phonex', timer: '01,12,05,678', exp: '+110000', statusColor: '#FF1E1D'},
+                    { id: 2, name: 'YouTouchMeTaLa', trans: 'La Turismo', timer: '01,12,05,678', exp: '+110000', statusColor: '#E3E3E3'},
+                    { id: 3, name: 'SpOrtkK', trans: 'Ecvador TURBO', timer: '01,12,05,678', exp: '+110000', statusColor: '#009D03'},
+                    { id: 4, name: 'Blackflex ', trans: 'Elegy Elegant', timer: '01,12,05,678', exp: '+110000', statusColor: '#FF0000'},
+                    { id: 5, name: 'California*Soul*', trans: 'Phonex TURBO', timer: '01,12,05,678', exp: '+110000', statusColor: '#13ABF9'},
+                    { id: 6, name: 'PeIIIaJIbIII,uk',  trans: 'Bella TURBO', timer: '01,12,05,678', exp: '+110000', statusColor: '#1C006A'},
+                    { id: 7, name: 'ZhanBratan', trans: 'Elegy Elegant', timer: '01,12,05,678', exp: '+110000', statusColor: '#005C73'},
+                    { id: 78, name: 'YouTouchMeTaLaLA', status: 'не вошёл', statusColor: '#FF1E1D'},
+                    { id: 78, name: 'YouTouchMeTaLaLA', status: 'не вошёл', statusColor: '#FF1E1D'},
+                    { id: 78, name: 'YouTouchMeTaLaLA', status: 'не вошёл', statusColor: '#FF1E1D'},
+                ]
+            },
+            mounted() {
+        
+            }
+        })
+        </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
+
+
+
